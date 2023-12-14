@@ -916,7 +916,6 @@ defmodule Ecto.Adapters.ClickHouse.Connection do
       _ -> "DateTime"
     end
   end
-  defp param_type(%DateTime{}), do: "DateTime"
   defp param_type(%Date{}), do: "Date"
 
   defp param_type(%Decimal{exp: exp}) do
