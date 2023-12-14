@@ -910,7 +910,7 @@ defmodule Ecto.Adapters.ClickHouse.Connection do
   defp param_type(%NaiveDateTime{}), do: "DateTime"
   defp param_type(%DateTime{microsecond: microsecond}) do
     case microsecond do
-      {microsecond, precision} when microsecond > 0 ->
+      {_val, precision} when precision > 0 ->
         "DateTime64"
 
       _ -> "DateTime"
